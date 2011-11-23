@@ -1,0 +1,13 @@
+<fieldset class="box settings">
+  <legend>確認メッセージ</legend>
+  <p><label>チケット登録時</label><%= text_area_tag 'settings[confirmation_new]', @settings['confirmation_new'], :cols => 50, :rows => 3 %></p>
+  <p><label>チケット更新時</label><%= text_area_tag 'settings[confirmation_update]', @settings['confirmation_update'], :cols => 50, :rows => 3 %></p>
+  <p><label>チケット削除時</label><%= text_area_tag 'settings[confirmation_destroy]', @settings['confirmation_destroy'], :cols => 50, :rows => 3 %></p>
+</fieldset>
+
+<fieldset class="box settings">
+  <legend>確認メッセージを表示するプロジェクト</legend>
+<% Project.active.each do |p| %>
+  <label class="block"><%= check_box_tag 'settings[enabled_projects][]', p.identifier, @settings['enabled_projects'].include?(p.identifier) %><%=h p.name %></label>
+<% end %>
+</fieldset>

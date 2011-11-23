@@ -7,4 +7,12 @@ Redmine::Plugin.register :redmine_issue_confirmation do
   version '0.0.1'
   url 'https://github.com/vividtone/redmine_issue_confirmation'
   author_url 'http://www.facebook.com/MAEDA.Go'
+
+  settings :default => {
+    'enabled_projects' => [],
+    'confirmation_new' => 'チケットを登録してもよろしいですか?',
+    'confirmation_update' => 'チケットを更新してもよろしいですか?',
+    'confirmation_delete' => 'チケットを削除してもよろしいですか?',
+  },
+    :partial => 'settings/issue_confirmation_settings'
 end
