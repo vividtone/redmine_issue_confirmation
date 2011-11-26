@@ -1,4 +1,5 @@
 require 'redmine'
+require 'issue_confirmation_view_hooks'
 
 Redmine::Plugin.register :redmine_issue_confirmation do
   name 'Redmine Issue Confirmation plugin'
